@@ -1,8 +1,21 @@
 Management Cheat sheet (from https://docs.janusgraph.org/latest/indexes.html)
-### Close current transactions before managing
+### Transactions
+#### Close current transactions before managing
  ```
  graph.tx().rollback()
  ```
+#### close all open transactions
+```
+size = graph.getOpenTransactions().size();
+for(i=0;i<size;i++){  graph.getOpenTransactions().getAt(0).rollback()}
+```
+### Close open management
+```
+mgmt = graph.openManagement()
+mgmt.getOpenInstances()
+mgmt.forceCloseInstance(#MANAGEMENT ID) //remove an instance
+mgmt.commit()
+```
 
 ### Open management
 ```
