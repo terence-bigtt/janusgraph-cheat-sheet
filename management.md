@@ -33,6 +33,7 @@ mgmt.printEdgeLabels()
 ```
 
 ### Indexing
+see https://groups.google.com/forum/#!topic/janusgraph-users/E0speKxetgM
 
 ```
 name = mgmt.getPropertyKey('name')
